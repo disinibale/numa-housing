@@ -80,9 +80,9 @@ function App() {
             </div>
           </div>
         </div>
-        <div className='h-[1px] w-full border-gray-200 border-t-[1px]'></div>
       </div>
-      <div className="px-10 md:px-[200px] pb-20 flex flex-col md:flex-row gap-20 text-slate-700">
+      <Houses />
+      <div className="px-10 md:px-[200px] py-20 flex flex-col md:flex-row gap-20 text-slate-700">
         <div className='w-full md:w-1/4 flex flex-col gap-10 border-b-[1px'>
           <div className='flex flex-col gap-2'>
             <h1 className='leading-2 uppercase text-green-600'>Numa's Services</h1>
@@ -158,9 +158,9 @@ function App() {
           </div>
         </div>
       </div>
-      <Houses />
       <PublicServices />
       <Footer />
+      <button  title="Contact Sale" className="fixed z-90 bottom-10 right-8 bg-blue-600 w-20 h-20 rounded-full drop-shadow-lg flex justify-center items-center text-white text-4xl hover:bg-blue-700 hover:drop-shadow-2xl hover:animate-bounce duration-300">&#9993;</button>
     </>
   )
 }

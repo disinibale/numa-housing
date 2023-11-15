@@ -90,10 +90,10 @@ const PublicServices: React.FC = () => {
             <div className='service-image md:min-h-screen min-w-screen bg-[url(../../Assets/Images/numa-2.jpg)] p-10 md:py-20 md:px-[200px] bg-fixed bg-cover bg-no-repeat bg-center flex md:flex-col-reverse'>
                 <div className='text-4xl md:text-8xl text-white font-bold p-10 justify-end items-end w-full md:w-1/2'>Public Service Name</div>
             </div>
-            <div className='flex flex-col md:flex-row gap-6 p-10 md:py-20 md:px-[200px]'>
+            <div className='leading-2 uppercase mb-6 font-semibold my-20 mx-20 md:mx-[200px]'>Numa's Public Services</div>
+            <div className='flex flex-col-reverse md:flex-row gap-6 p-10 md:pb-20 md:px-[200px]'>
                 <div className='w-full md:w-1/2'>
                     <div className='flex flex-col gap-2 my-6'>
-                        <div className='leading-2 uppercase mb-6 font-semibold'>Numa's Public Services</div>
                         {activeService.map((service) => {
                             console.log(service.id, service.isActive)
                             return (
@@ -112,8 +112,9 @@ const PublicServices: React.FC = () => {
                         })}
                     </div>
                 </div>
-                <div className='w-full md:w-1/2 bg-[url(https://ecoland.smartdemowp.com/wp-content/uploads/map-1.png);] bg-center bg-no-repeat bg-cover'>
-                    <div className='blurry-edge'></div>
+                <div className='w-full min-h-full md:w-1/2 flex items-center justify-center'>
+                    {/* https://ecoland.smartdemowp.com/wp-content/uploads/map-1.png */}
+                    <img src='https://ecoland.smartdemowp.com/wp-content/uploads/map-1.png' className='w-full h-full object-fill md:object-cover object-center' />
                 </div>
             </div>
         </>

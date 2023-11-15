@@ -47,7 +47,7 @@ const Jumbotron: FC<JumbotronProps> = ({ variant }) => {
                 <h1 className="text-5xl md:text-8xl mt-6 font-extrabold">{JumbotronVariant[variant].displayText}</h1>
                 {
                     JumbotronVariant[variant].button ? <div className={`flex`}>
-                        <a href="#" className="p-3 md:p-6 mt-4 md:mt-8 text-small md:text-normal bg-white text-slate-950 uppercase flex items-center gap-4 hover:bg-gray-200 transition-colors duration-500"><LiaCubeSolid size={30} />{JumbotronVariant[variant].button}</a>
+                        <a target="_blank" href="https://app.lapentor.com/sphere/numa-housing-tipe-77" className="p-3 md:p-6 mt-4 md:mt-8 text-small md:text-normal bg-white text-slate-950 uppercase flex items-center gap-4 hover:bg-gray-200 transition-colors duration-500"><LiaCubeSolid size={30} />{JumbotronVariant[variant].button}</a>
                     </div> : <></>
                 }
             </div>

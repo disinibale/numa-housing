@@ -3,12 +3,13 @@ import { IoLocationOutline } from 'react-icons/io5'
 import PublicServices from './Components/PublicServices'
 import Houses from './Components/Houses'
 import Footer from './Components/Footer'
+import Contact from './Components/Contact'
 
 function App() {
   return (
     <>
-      <Jumbotron variant='Home' />
-      <div className="p-10 md:px-[200px] md:py-20 flex flex-col md:flex-row gap-20 text-slate-700">
+      {/* <Jumbotron variant='Home' />
+      <div id="about" className="p-10 md:px-[200px] md:py-20 flex flex-col md:flex-row gap-20 text-slate-700">
         <div className='w-full md:w-1/4 flex flex-col gap-10 border-b-[1px'>
           <div className='flex flex-col gap-2'>
             <h1 className='leading-2 uppercase text-green-600'>Beginning From</h1>
@@ -160,7 +161,8 @@ function App() {
       </div>
       <PublicServices />
       <Footer />
-      <button  title="Contact Sale" className="fixed z-90 bottom-10 right-8 bg-blue-600 w-20 h-20 rounded-full drop-shadow-lg flex justify-center items-center text-white text-4xl hover:bg-blue-700 hover:drop-shadow-2xl hover:animate-bounce duration-300">&#9993;</button>
+      <button  title="Contact Sale" className="fixed z-90 bottom-10 right-8 bg-blue-600 w-20 h-20 rounded-full drop-shadow-lg flex justify-center items-center text-white text-4xl hover:bg-blue-700 hover:drop-shadow-2xl hover:animate-bounce duration-300">&#9993;</button> */}
+      <Contact />
     </>
   )
 }

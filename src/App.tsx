@@ -4,11 +4,29 @@ import PublicServices from './Components/PublicServices'
 import Houses from './Components/Houses'
 import Footer from './Components/Footer'
 import Contact from './Components/Contact'
+import React, { useState, useEffect } from 'react'
+import NavbarScroll from './Components/NavbarScroll'
 
 function App() {
+  const [scrollPosition, setScrollPosition] = useState<number>(window.screenY)
+
+  const handleScroll = () => {
+    setScrollPosition(window.scrollY)
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
+  console.log(scrollPosition)
   return (
     <>
-      {/* <Jumbotron variant='Home' />
+      <NavbarScroll scrollY={scrollPosition} />
+      <Jumbotron variant='Home' />
       <div id="about" className="p-10 md:px-[200px] md:py-20 flex flex-col md:flex-row gap-20 text-slate-700">
         <div className='w-full md:w-1/4 flex flex-col gap-10 border-b-[1px'>
           <div className='flex flex-col gap-2'>
@@ -160,9 +178,9 @@ function App() {
         </div>
       </div>
       <PublicServices />
-      <Footer />
-      <button  title="Contact Sale" className="fixed z-90 bottom-10 right-8 bg-blue-600 w-20 h-20 rounded-full drop-shadow-lg flex justify-center items-center text-white text-4xl hover:bg-blue-700 hover:drop-shadow-2xl hover:animate-bounce duration-300">&#9993;</button> */}
       <Contact />
+      <Footer />
+      <button title="Contact Sale" className="fixed z-90 bottom-10 right-8 bg-green-600 w-12 h-12 md:w-16 md:h-16 rounded-full drop-shadow-lg flex justify-center items-center text-white text-xl md:text-4xl hover:bg-green-700 hover:drop-shadow-2xl hover:animate-bounce duration-300">&#9993;</button>
     </>
   )
 }

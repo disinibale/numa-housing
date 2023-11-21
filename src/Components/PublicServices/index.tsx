@@ -87,7 +87,7 @@ const PublicServices: React.FC = () => {
 
     return (
         <>
-            <div id="contact" className='service-image md:min-h-screen min-w-screen bg-[url(../../Assets/Images/numa-2.jpg)] p-10 md:py-20 md:px-[200px] bg-fixed bg-cover bg-no-repeat bg-center flex md:flex-col-reverse'>
+            <div className='service-image md:min-h-screen min-w-screen bg-[url(../../Assets/Images/numa-2.jpg)] p-10 md:py-20 md:px-[200px] bg-fixed bg-cover bg-no-repeat bg-center flex md:flex-col-reverse'>
                 <div className='text-4xl md:text-8xl text-white font-bold p-10 justify-end items-end w-full md:w-1/2'>Public Service Name</div>
             </div>
             <div className='leading-2 uppercase mb-6 font-semibold my-20 mx-20 md:mx-[200px]'>Numa's Public Services</div>
@@ -95,7 +95,6 @@ const PublicServices: React.FC = () => {
                 <div className='w-full md:w-1/2'>
                     <div className='flex flex-col gap-2 my-6'>
                         {activeService.map((service) => {
-                            console.log(service.id, service.isActive)
                             return (
                                 <div onClick={() => handleActiveService(service.id)} key={service.id} className='flex flex-row gap-4 items-center hover:cursor-pointer'>
                                     <div className='w-20 h-20 flex items-center justify-center'>

@@ -19,14 +19,14 @@ interface PageContext {
 const JumbotronVariant: Record<PageVariant, PageContext> = {
     Home: {
         subText: 'Luxury Residence',
-        displayText: 'Numa Housing',
+        displayText: 'Numa Urban Co-Housing',
         button: 'Explore 3D Visualization',
         buttonIcon: LiaCubeSolid,
         backgroundImage: HomeBackground
     },
     About: {
         subText: 'About Us',
-        displayText: 'Numa Housing Info',
+        displayText: 'Numa Urban Co-Housing Info',
         button: undefined,
         backgroundImage: HomeBackground
     },

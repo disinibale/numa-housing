@@ -27,18 +27,18 @@ const Houses: React.FC = () => {
       id: 1,
       thumbnail: '../../Assets/Images/numa-3.jpg',
       type: 'Compact',
-      dimension: 52,
-      description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni totam ratione, voluptates doloribus modi unde vel nostrum non odio nihil itaque ab, ad repellat quo? Ipsa eum quas culpa veniam?',
+      dimension: 51,
+      description: 'Rumah ini cocok bagi pasangan muda yang baru menikah dan memiliki rencana untuk memiliki satu hingga dua anak. Desainnya memu-ngkinkan ruman ini untuk tumbun seiring berjalannya waktu, dengan potensi penggunaan lahan belakang yang beragam untuk keperluan masa depan. Selain itu, rumah ini memiliki budget atau harga yang lebih terjangkau, sambil menawarkan taman belakang yang luas untuk berbagai aktivitas outdoor.',
       isActive: true,
       actions: {
         offer: '',
         explore: ''
       },
       details: {
-        location: 'Local A',
+        location: '63',
         floor: 2,
-        bedAndBath: '3/2',
-        parking: 'No',
+        bedAndBath: '2BD/2BR',
+        parking: '1 Carport',
         price: 1250000000
       }
     },
@@ -46,18 +46,18 @@ const Houses: React.FC = () => {
       id: 2,
       thumbnail: '../../Assets/Images/numa-3.jpg',
       type: 'Standard',
-      dimension: 72,
-      description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni totam ratione, voluptates doloribus modi unde vel nostrum non odio nihil itaque ab, ad repellat quo? Ipsa eum quas culpa veniam?',
+      dimension: 57,
+      description: 'Rumah ini cocok bagi pasangan muda yang baru menikah dan memiliki rencana untuk memiliki satu hingga dua anak. Desainnya memu-ngkinkan ruman ini untuk tumbun seiring berjalannya waktu, dengan potensi penggunaan lahan belakang yang beragam untuk keperluan masa depan. Selain itu, rumah ini memiliki budget atau harga yang lebih terjangkau, sambil menawarkan taman belakang yang luas untuk berbagai aktivitas outdoor.',
       isActive: false,
       actions: {
         offer: '',
         explore: ''
       },
       details: {
-        location: 'Local B',
+        location: '84',
         floor: 2,
-        bedAndBath: '3/2',
-        parking: 'Yes',
+        bedAndBath: '2BD/2BR',
+        parking: '1 Carport',
         price: 1550000000
       }
     },
@@ -65,17 +65,17 @@ const Houses: React.FC = () => {
       id: 3,
       thumbnail: '../../Assets/Images/numa-3.jpg',
       type: 'Deluxe',
-      dimension: 83,
-      description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni totam ratione, voluptates doloribus modi unde vel nostrum non odio nihil itaque ab, ad repellat quo? Ipsa eum quas culpa veniam?',
+      dimension: 77,
+      description: 'Rumah ini sangat cocok bagi mereka yang memiliki dua hingga tiga anak, dengan tasilitas kamar pembantu yang berada di area terpisah memungkinkan Anda untuk tetap merasakan privasi Anda. Desainnya sangat kompak, memaksimalkan pemanfaatan ruangan, sambil tetap menye-diakan taman untuk berbagai kegiatan santai dan hobi. Selain itu, tersedia juga area service dengan fasilitas cuci baju dan mesin cuci yang terkelola dengan baik di bagian belakang rumah.',
       isActive: false,
       actions: {
         offer: '',
         explore: ''
       },
       details: {
-        location: 'Local C',
+        location: '84',
         floor: 2,
-        bedAndBath: '3/2',
+        bedAndBath: '3BD/2BR + Maid Room',
         parking: 'Yes',
         price: 1750000000
       }
@@ -112,6 +112,7 @@ const Houses: React.FC = () => {
 
   return (
     <div className="houses bg-gray-100 flex flex-col pt-10 px-10 pb-0 md:py-20 md:px-[200px] text-slate-700">
+      <h4 className="py-10 uppercase text-green-600">House Types</h4>
       <div className="flex flex-row items-center justify-center gap-2">
         {houses.map((house) => {
           return (
@@ -139,19 +140,19 @@ const Houses: React.FC = () => {
       </div>
       <div className="mt-10 flex flex-col md:flex-row gap-6">
         <div className="w-full md:w-1/3">
-          <h1 className="text-5xl font-bold">{houses[activeHouseId - 1].dimension} m2</h1>
-          <p className="text-normal font-normal text-gray-600 mt-5 whitespace-break-spaces">{houses[activeHouseId - 1].description}</p>
+          <h1 className="text-5xl font-bold">{houses[activeHouseId - 1].dimension} &#13217;</h1>
+          <p className="text-normal text-justify font-normal text-gray-600 mt-5 whitespace-break-spaces">{houses[activeHouseId - 1].description}</p>
           <div className="flex flex-col gap-4 mt-5">
             <div className="flex flex-row justify-between border-[1px] border-transparent border-b-gray-600 py-5">
-              <h4 className="font-semibold text-small">Location</h4>
-              <h4 className="font-bold">{houses[activeHouseId - 1].details.location}</h4>
+              <h4 className="font-semibold text-small">Land Area</h4>
+              <h4 className="font-bold">{houses[activeHouseId - 1].details.location} &#13217;</h4>
             </div>
             <div className="flex flex-row justify-between border-[1px] border-transparent border-b-gray-600 py-5">
               <h4 className="font-semibold text-small">Floor</h4>
               <h4 className="font-bold">{houses[activeHouseId - 1].details.floor}</h4>
             </div>
             <div className="flex flex-row justify-between border-[1px] border-transparent border-b-gray-600 py-5">
-              <h4 className="font-semibold text-small">Bed/Bath</h4>
+              <h4 className="font-semibold text-small">Rooms</h4>
               <h4 className="font-bold">{houses[activeHouseId - 1].details.bedAndBath}</h4>
             </div>
             <div className="flex flex-row justify-between border-[1px] border-transparent border-b-gray-600 py-5">
@@ -170,10 +171,10 @@ const Houses: React.FC = () => {
         </div>
         <div
           className={`
-            w-full md:w-2/3 min-h-full 
+            w-full md:w-2/3 
             flex items-center justify-center
           `}>
-          <img className="w-full h-full object-contain object-center" src="https://ecoland.smartdemowp.com/wp-content/uploads/apartment-1.jpg" />
+          <img className="w-full object-contain object-center" src="https://ecoland.smartdemowp.com/wp-content/uploads/apartment-1.jpg" />
         </div>
       </div>
     </div>

@@ -15,7 +15,7 @@ const Navbar: React.FC = () => {
                 isMenuActive ?
                     <div id="home" className='fixed top-0 gap-6 jumbotron-navbar right-0 bottom-0 w-screen h-screen bg-black opacity-75 z-[9999] flex flex-col py-4 px-10 font-semibold'>
                         <div className='flex flex-row justify-between'>
-                            <h1 className='text-lg'>Numa Housing</h1>
+                            <h1 className='text-lg'>Numa Urban Co-Housing</h1>
                             <button onClick={() => handleMenuButton()}>
                                 <VscClose size={26} />
                             </button>
@@ -26,7 +26,7 @@ const Navbar: React.FC = () => {
                     </div> :
                     <nav id="home" className="absolute jumbotron-navbar bg-transparent flex items-center justify-between px-10 md:px-[200px] py-4 font-semibold z-20 top-0 left-0 w-full">
                         <div className="text-white">
-                            <h1 className="text-lg font-bold">Numa Housing</h1>
+                            <h1 className="text-lg font-bold">Numa Urban Co-Housing</h1>
                         </div>
 
                         <div className="text-white flex-grow text-center relative font-semibold">

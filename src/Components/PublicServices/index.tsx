@@ -4,7 +4,7 @@ const PublicServices: React.FC = () => {
     const availableService = [
         {
             id: 1,
-            name: 'Warung Gacoan',
+            name: 'Gedebage KM 149 Toll Exit',
             distance: '1.5 Km',
             locationType: 'Restaurant',
             coverImage: null,
@@ -16,7 +16,7 @@ const PublicServices: React.FC = () => {
         },
         {
             id: 2,
-            name: 'Internet Cafe',
+            name: 'Hypermart Metro Trade Center',
             distance: '2.9 Km',
             locationType: 'Public Service',
             coverImage: null,
@@ -28,7 +28,7 @@ const PublicServices: React.FC = () => {
         },
         {
             id: 3,
-            name: 'National Library',
+            name: 'RS Al-Islam',
             distance: '4.3 Km',
             locationType: 'Public Service',
             coverImage: null,
@@ -40,7 +40,7 @@ const PublicServices: React.FC = () => {
         },
         {
             id: 4,
-            name: 'Pramuka Park',
+            name: 'SAMSAT Kawaluyaan',
             distance: '5.1 Km',
             locationType: 'Public Park',
             coverImage: null,
@@ -52,7 +52,7 @@ const PublicServices: React.FC = () => {
         },
         {
             id: 5,
-            name: 'Airstrip',
+            name: 'SMA Negeri 21 Bandung',
             distance: '1.5 Km',
             locationType: 'Public Service',
             coverImage: null,

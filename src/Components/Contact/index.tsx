@@ -10,7 +10,7 @@ const Contact: React.FC = () => {
                     <img className='w-24 h-24 mt-4 rounded-full' src='https://ecoland.smartdemowp.com/wp-content/uploads/agents-1.png' />
                     <div>
                         <h3 className='text-2xl font-semibold'>M. Iqbal Nurzaman</h3>
-                        <small className='text-gray-500'>Property Consultant at Numa Housing</small>
+                        <small className='text-gray-500'>Property Consultant at Numa Urban Co-Housing</small>
                     </div>
                     <div>
                         <h5 className='font-semibold'>Phone: <small className="font-normal  ">(+62) 89514948983</small></h5>

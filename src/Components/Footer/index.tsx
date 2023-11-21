@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
             <div className="flex flex-col md:flex-row justify-between gap-20 md:gap-6 p-10 md:py-20 md:px-[200px]">
                 <div className="flex flex-col md:flex-row justify-between gap-6 md:w-1/2">
                     <div className="flex flex-col gap-4 w-full md:w-1/2">
-                        <h1 className="text-3xl font-bold text-gray-800">Numa Housing</h1>
+                        <h1 className="text-3xl font-bold text-gray-800">Numa Urban <br />Co-Housing</h1>
                         <a className="font-light text-light text-gray-700">About Us</a>
                         <a className="font-light text-light text-gray-700">Contact</a>
                         <a className="font-light text-light text-gray-700">marketing@numahousing.com</a>
@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
             <div className='h-[1px] bg-slate-400 mx-10 md:mx-[200px]'></div>
             <div className="flex flex-row justify-between mx-10 md:mx-[200px] text-gray-700 font-light mb-12">
                 <h4>
-                    © {new Date().getFullYear()} <span className="font-semibold hover:text-green-600 hover:cursor-pointer transition-colors ease-in-out duration-300">Numa Housing</span>. All Rights Reserved
+                    © {new Date().getFullYear()} <span className="font-semibold hover:text-green-600 hover:cursor-pointer transition-colors ease-in-out duration-300">Numa Urban Co-Housing</span>. All Rights Reserved
                 </h4>
             </div>
         </div>

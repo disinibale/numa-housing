@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { RxHamburgerMenu } from 'react-icons/rx'
 import { VscClose } from 'react-icons/vsc'
+import Logo from '../../Assets/Images/logo.png'
 
 const Navbar: React.FC = () => {
     const [isMenuActive, setIsMenuActive] = useState<boolean>(false)
@@ -15,7 +16,7 @@ const Navbar: React.FC = () => {
                 isMenuActive ?
                     <div id="home" className='fixed top-0 gap-6 jumbotron-navbar right-0 bottom-0 w-screen h-screen bg-black opacity-75 z-[9999] flex flex-col py-4 px-10 font-semibold'>
                         <div className='flex flex-row justify-between'>
-                            <h1 className='text-lg'>Numa Urban Co-Housing</h1>
+                            <img className='h-5' src={Logo} />
                             <button onClick={() => handleMenuButton()}>
                                 <VscClose size={26} />
                             </button>
@@ -24,9 +25,9 @@ const Navbar: React.FC = () => {
                         <div className='hover:border-b-[2px] hover:cursor-pointer border-white transition-all ease-in-out duration-300'>About</div>
                         <div className='hover:border-b-[2px] hover:cursor-pointer border-white transition-all ease-in-out duration-300'>Contact</div>
                     </div> :
-                    <nav id="home" className="absolute jumbotron-navbar bg-transparent flex items-center justify-between px-10 md:px-[200px] py-4 font-semibold z-20 top-0 left-0 w-full">
+                    <nav id="home" className="absolute jumbotron-navbar bg-transparent flex items-center justify-between px-10 md:px-20 lg:px-[150px] py-4 font-semibold z-20 top-0 left-0 w-full">
                         <div className="text-white">
-                            <h1 className="text-lg font-bold">Numa Urban Co-Housing</h1>
+                            <img className='w-20' src={Logo} />
                         </div>
 
                         <div className="text-white flex-grow text-center relative font-semibold">

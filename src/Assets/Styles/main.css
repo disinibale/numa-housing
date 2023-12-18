@@ -95,6 +95,12 @@ body {
   z-index: -1;
 }
 
-.house-specification {
-  animation: comingFromTop 500ms ease-in-out;
+.house-specifications {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.house-specifications.active {
+  max-height: 10000px;
 }

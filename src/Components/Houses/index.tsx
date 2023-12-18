@@ -425,13 +425,16 @@ const Houses: React.FC = () => {
 
   return (
     <>
-      <div className="houses bg-gray-100 flex flex-col py-10 px-10 md:pb-20 md:pt-0 md:px-20 lg:px-[150px] text-slate-700">
+      <div className="houses bg-gray-100 flex flex-col py-10 px-10 md:pt-0 md:px-20 lg:px-[150px] text-slate-700">
         <h4 className="py-10 uppercase text-gray-600 text-center md:text-left">House Types</h4>
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-2">
           {houses.map((house) => {
             return (
               <div
-                onClick={() => handleActiveHouse(house.id)}
+                onClick={() => {
+                  handleActiveHouse(house.id)
+                  setSpecificationsActive(false)
+                }}
                 className={
                   `${house.isActive === true ? 'active bg-white' : 'bg-gray-200'} 
                 py-6 px-10 relative font-bold
@@ -492,8 +495,14 @@ const Houses: React.FC = () => {
             </div>
             <div className="flex flex-col lg:flex-row gap-5 mt-5">
               <button
-                onClick={() => setSpecificationsActive(!specificationsActive)}
-                className="bg-white text-center text-gray-700 uppercase font-normal w-full py-5 hover:bg-gray-200 hover:text-gray-800 transition-all ease-in-out duration-300 items-center justify-center">
+                onClick={() => {
+                  window.location.href="#house-spec"
+                  setSpecificationsActive(!specificationsActive)
+                }}
+                className="
+                  bg-white text-center text-gray-700 uppercase font-normal 
+                  w-full py-5 hover:bg-gray-200 hover:text-gray-800 transition-all 
+                  ease-in-out duration-300 items-center justify-center">
                 Specifications
               </button>
               <a
@@ -501,11 +510,11 @@ const Houses: React.FC = () => {
                 Explore House 360°
               </a>
               <button
+                id="house-spec"
                 onClick={(e) => {
                   e.preventDefault()
                   window.location.href = `https://api.whatsapp.com/send/?phone=%2B628989901011&text&type=phone_number&app_absent=0&text=${generateMessageText(activeHouseId)}`
                 }}
-                // href={`https://api.whatsapp.com/send/?phone=%2B628989901011&text&type=phone_number&app_absent=0&text=${generateMessageText(activeHouseId)}`}
                 className="bg-black text-white uppercase font-normal text-center w-full py-5 hover:bg-gray-600 hover:text-gray-100 transition-all ease-in-out duration-300 items-center justify-center">
                 I'm Interested
               </button>
@@ -536,135 +545,133 @@ const Houses: React.FC = () => {
           </div>
         </div>
       </div>
-      {specificationsActive && (
-        <div
-          className={`transition-all ease-in-out duration-300 delay-150
-            bg-gray-100 py-10 px-10 md:px-20 
-            flex flex-col lg:px-[150px] text-slate-700`}>
-          <div className="uppercase text-center md:text-left">Specifications</div>
-          <div className="flex flex-col md:flex-row mt-10">
-            <div className="flex flex-col w-full md:w-2/3 gap-6">
-              <div className="flex flex-col gap-2">
-                <h1 className="w-full md:w-1/2 uppercase font-bold">Pondasi</h1>
-                <h1 className="w-full md:w-1/2">Strauss Pile</h1>
-              </div>
-              <div className="flex flex-col gap-2">
-                <h1 className="w-full md:w-1/2 uppercase font-bold">Atap</h1>
-                <h1 className="w-full md:w-1/2">Atap Genteng Flat Beton ex. Cisangkan</h1>
-                <h1 className="w-full md:w-1/2">Atap Skylight Polikarbonat ex. Solarflat</h1>
-              </div>
-              <div className="flex flex-col gap-2">
-                <h1 className="w-full md:w-1/2 uppercase font-bold">Lantai</h1>
-                <h1 className="w-full md:w-1/2">Lantai Bawah — Keramik 60x60 ex. Platinum Santiago Grey</h1>
-                <h1 className="w-full md:w-1/2">Lantai Atas — Keramik 60x60 ex. Platinum Santiago Grey</h1>
-                <h1 className="w-full md:w-1/2">Tangga — Kayu Vinyl ex. TACO 3mm</h1>
-                <h1 className="w-full md:w-1/2">Kamar Mandi (+ Service) — Keramik 30x30 ex. Platinum Cargo Dark Grey</h1>
-                <h1 className="w-full md:w-1/2">Area Servis — Acian Semen Roll</h1>
-                <h1 className="w-full md:w-1/2">Teras Depan — Lantai Kayu Conwood + Coating</h1>
-                <h1 className="w-full md:w-1/2">Area Samping & Teras Belakang — Batu Split</h1>
-                <h1 className="w-full md:w-1/2">Carport — Acian Semen Roll</h1>
-              </div>
-              <div className="flex flex-col gap-2">
-                <h1 className="w-full md:w-1/2 uppercase font-bold">Dinding</h1>
-                <h1 className="w-full md:w-1/2">Dinding Interior — Bata Campuran, Plester Aci / Kamprot, Fin. Cat ex/ Catylac Pure White</h1>
-                <h1 className="w-full md:w-1/2">Dinding Exterior — Bata Campuran, Plester Aci / Kamprot, Fin. Cat ex/ Catylac Exterior Brilliant White</h1>
-                <h1 className="w-full md:w-1/2">Kamar Mandi — Keramik Putih 10x20 ex. Mulia Subway Tile, List Profil Kayu 20x20mm Fin. Melamik Natural</h1>
-                <h1 className="w-full md:w-1/2">Kamar Mandi Service — Keramik Putih 10x20 ex. Mulia Subway Tile</h1>
-              </div>
-              <div className="flex flex-col gap-2">
-                <h1 className="w-full md:w-1/2 uppercase font-bold">Pintu & Jendela</h1>
-                <h1 className="w-full md:w-1/2">Pintu dan Jendela — Alumunium Ex. Alexindo Silver + Kaca Bening</h1>
-                <h1 className="w-full md:w-1/2">Pintu Utama — Kusen Kayu Solid 50/150 ex. Kamper Fin. Melamik Natural, Daun Pintu Meateak Sungkai Fin. Melamik Natural</h1>
-                <h1 className="w-full md:w-1/2">Pintu Kamar — Kusen Kayu Solid 50/150 ex. Kamper Fin. Melamik Natural, Daun Pintu Meateak Sungkai Fin. Melamik Natural</h1>
-                <h1 className="w-full md:w-1/2">Jendela — Alumunium Ex. Alexindo Silver + Kaca Bening</h1>
-              </div>
-              <div className="flex flex-col gap-2">
-                <h1 className="w-full md:w-1/2 uppercase font-bold">Mekanikal dan Elektrikal</h1>
-                <h1 className="w-full md:w-1/2">Listrik — 2200Watt</h1>
-                <h1 className="w-full md:w-1/2">TV Antena Kabel — Komunal & Kamar Utama</h1>
-                <h1 className="w-full md:w-1/2">Sistem Pemanas Air — Water Heater Listrik ex. Arsiton</h1>
-                <h1 className="w-full md:w-1/2">Air Conditioner (AC) — Instalasi pada Kamar Utama (0.5Pk)</h1>
-              </div>
-              <div className="flex flex-col gap-2">
-                <h1 className="w-full md:w-1/2 uppercase font-bold">Sanitair</h1>
-                <h1 className="w-full md:w-1/2">Air — Submersible</h1>
-                <h1 className="w-full md:w-1/2">Pipa — Maspion</h1>
-                <h1 className="w-full md:w-1/2">TOTO</h1>
-                <h1 className="w-full md:w-1/2">Biological Filter Septic Tank</h1>
-              </div>
-              <div className="flex flex-col gap-2">
-                <h1 className="w-full md:w-1/2 uppercase font-bold">Kanopi</h1>
-                <h1 className="w-full md:w-1/2">Rangka Besi</h1>
-                <h1 className="w-full md:w-1/2">Atap Metal Spandek t=0.45</h1>
-              </div>
+      <div
+        id="house-spec"
+        className={`
+        house-specifications ${specificationsActive ? 'active' : ''}
+        bg-gray-100 text-slate-700 flex flex-col lg:px-[150px] pb-10 px-10 md:px-20`}>
+        <div className={`uppercase text-center md:text-left transition-all duration-300 ${specificationsActive ? '' : 'text-transparent'}`}>Specifications</div>
+        <div className="flex flex-col md:flex-row mt-10">
+          <div className="flex flex-col w-full md:w-2/3 gap-6">
+            <div className="flex flex-col gap-2">
+              <h1 className="w-full md:w-1/2 uppercase font-bold">Pondasi</h1>
+              <h1 className="w-full md:w-1/2">Strauss Pile</h1>
             </div>
-            <div className="flex flex-col w-full md:w-1/3 gap-6 mt-6 md:mt-0">
-              <div className="flex flex-col gap-2">
-                <h1 className="w-full md:w-1/2 uppercase font-bold">Living Room Interior</h1>
-                <h1 className="w-full md:w-1/2">Sofa</h1>
-                <h1 className="w-full md:w-1/2">Coffee Table</h1>
-                <h1 className="w-full md:w-1/2">Credenza</h1>
-                <h1 className="w-full md:w-1/2">Side Table</h1>
-                <h1 className="w-full md:w-1/2">Carpet</h1>
-                <h1 className="w-full md:w-1/2">TV</h1>
-              </div>
-              <div className="flex flex-col gap-2">
-                <h1 className="w-full md:w-1/2 uppercase font-bold">Dining Room Interior</h1>
-                <h1 className="w-full md:w-1/2">Dining Table Set</h1>
-                <h1 className="w-full md:w-1/2">Kulkas</h1>
-                <h1 className="w-full md:w-1/2">Dispenser</h1>
-                <h1 className="w-full md:w-1/2">Stand Lamp</h1>
-                <h1 className="w-full md:w-1/2">Dining Lamp</h1>
-                <h1 className="w-full md:w-1/2">Kitchen Set Kabinet Atas</h1>
-                <h1 className="w-full md:w-1/2">Kitchen Set Kabinet Bawah</h1>
-                <h1 className="w-full md:w-1/2">Kitchen Set Top Table Kayu</h1>
-                <h1 className="w-full md:w-1/2">Kitchen Set Kompor Gas Tanam</h1>
-              </div>
-              <div className="flex flex-col gap-2">
-                <h1 className="w-full md:w-1/2 uppercase font-bold">Service</h1>
-                <h1 className="w-full md:w-1/2">Mesin Cuci Front Loading</h1>
-              </div>
-              <div className="flex flex-col gap-2">
-                <h1 className="w-full md:w-1/2 uppercase font-bold">Master Bedroom Interior</h1>
-                <h1 className="w-full md:w-1/2">Bunk Bed</h1>
-                <h1 className="w-full md:w-1/2">Bed Queen Size</h1>
-                <h1 className="w-full md:w-1/2">Wardrobe</h1>
-                <h1 className="w-full md:w-1/2">Meja Rias</h1>
-                <h1 className="w-full md:w-1/2">Mirror</h1>
-                <h1 className="w-full md:w-1/2">Side Table</h1>
-              </div>
-              <div className="flex flex-col gap-2">
-                <h1 className="w-full md:w-1/2 uppercase font-bold">Kamar Anak 1 Interior</h1>
-                <h1 className="w-full md:w-1/2">Bunk Bed</h1>
-                <h1 className="w-full md:w-1/2">Bed</h1>
-                <h1 className="w-full md:w-1/2">Wardrobe</h1>
-                <h1 className="w-full md:w-1/2">Meja Belajar</h1>
-                <h1 className="w-full md:w-1/2">Kursi Belajar</h1>
-              </div>
-              {activeHouseId === 3 && (
-                <>
-                  <div className="flex flex-col gap-2">
-                    <h1 className="w-full md:w-1/2 uppercase font-bold">Kamar Anak 2 Interior</h1>
-                    <h1 className="w-full md:w-1/2">Bunk Bed</h1>
-                    <h1 className="w-full md:w-1/2">Bed</h1>
-                    <h1 className="w-full md:w-1/2">Wardrobe</h1>
-                    <h1 className="w-full md:w-1/2">Meja Belajar</h1>
-                    <h1 className="w-full md:w-1/2">Kursi Belajar</h1>
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <h1 className="w-full md:w-1/2 uppercase font-bold">Multifunction Room Interior</h1>
-                    <h1 className="w-full md:w-1/2">Meja Belajar</h1>
-                    <h1 className="w-full md:w-1/2">Office Chair</h1>
-                    <h1 className="w-full md:w-1/2">Ambalan</h1>
-                    <h1 className="w-full md:w-1/2">Carpet</h1>
-                  </div>
-                </>
-              )}
+            <div className="flex flex-col gap-2">
+              <h1 className="w-full md:w-1/2 uppercase font-bold">Atap</h1>
+              <h1 className="w-full md:w-1/2">Atap Genteng Flat Beton ex. Cisangkan</h1>
+              <h1 className="w-full md:w-1/2">Atap Skylight Polikarbonat ex. Solarflat</h1>
+            </div>
+            <div className="flex flex-col gap-2">
+              <h1 className="w-full md:w-1/2 uppercase font-bold">Lantai</h1>
+              <h1 className="w-full md:w-1/2">Lantai Bawah — Keramik 60x60 ex. Platinum Santiago Grey</h1>
+              <h1 className="w-full md:w-1/2">Lantai Atas — Keramik 60x60 ex. Platinum Santiago Grey</h1>
+              <h1 className="w-full md:w-1/2">Tangga — Kayu Vinyl ex. TACO 3mm</h1>
+              <h1 className="w-full md:w-1/2">Kamar Mandi (+ Service) — Keramik 30x30 ex. Platinum Cargo Dark Grey</h1>
+              <h1 className="w-full md:w-1/2">Area Servis — Acian Semen Roll</h1>
+              <h1 className="w-full md:w-1/2">Teras Depan — Lantai Kayu Conwood + Coating</h1>
+              <h1 className="w-full md:w-1/2">Area Samping & Teras Belakang — Batu Split</h1>
+              <h1 className="w-full md:w-1/2">Carport — Acian Semen Roll</h1>
+            </div>
+            <div className="flex flex-col gap-2">
+              <h1 className="w-full md:w-1/2 uppercase font-bold">Dinding</h1>
+              <h1 className="w-full md:w-1/2">Dinding Interior — Bata Campuran, Plester Aci / Kamprot, Fin. Cat ex/ Catylac Pure White</h1>
+              <h1 className="w-full md:w-1/2">Dinding Exterior — Bata Campuran, Plester Aci / Kamprot, Fin. Cat ex/ Catylac Exterior Brilliant White</h1>
+              <h1 className="w-full md:w-1/2">Kamar Mandi — Keramik Putih 10x20 ex. Mulia Subway Tile, List Profil Kayu 20x20mm Fin. Melamik Natural</h1>
+              <h1 className="w-full md:w-1/2">Kamar Mandi Service — Keramik Putih 10x20 ex. Mulia Subway Tile</h1>
+            </div>
+            <div className="flex flex-col gap-2">
+              <h1 className="w-full md:w-1/2 uppercase font-bold">Pintu & Jendela</h1>
+              <h1 className="w-full md:w-1/2">Pintu dan Jendela — Alumunium Ex. Alexindo Silver + Kaca Bening</h1>
+              <h1 className="w-full md:w-1/2">Pintu Utama — Kusen Kayu Solid 50/150 ex. Kamper Fin. Melamik Natural, Daun Pintu Meateak Sungkai Fin. Melamik Natural</h1>
+              <h1 className="w-full md:w-1/2">Pintu Kamar — Kusen Kayu Solid 50/150 ex. Kamper Fin. Melamik Natural, Daun Pintu Meateak Sungkai Fin. Melamik Natural</h1>
+              <h1 className="w-full md:w-1/2">Jendela — Alumunium Ex. Alexindo Silver + Kaca Bening</h1>
+            </div>
+            <div className="flex flex-col gap-2">
+              <h1 className="w-full md:w-1/2 uppercase font-bold">Mekanikal & Elektrikal</h1>
+              <h1 className="w-full md:w-1/2">Listrik — 2200Watt</h1>
+              <h1 className="w-full md:w-1/2">TV Antena Kabel — Komunal & Kamar Utama</h1>
+              <h1 className="w-full md:w-1/2">Sistem Pemanas Air — Water Heater Listrik ex. Arsiton</h1>
+              <h1 className="w-full md:w-1/2">Air Conditioner (AC) — Instalasi pada Kamar Utama (0.5Pk)</h1>
+            </div>
+            <div className="flex flex-col gap-2">
+              <h1 className="w-full md:w-1/2 uppercase font-bold">Sanitair</h1>
+              <h1 className="w-full md:w-1/2">Air — Submersible</h1>
+              <h1 className="w-full md:w-1/2">Pipa — Maspion</h1>
+              <h1 className="w-full md:w-1/2">TOTO</h1>
+              <h1 className="w-full md:w-1/2">Biological Filter Septic Tank</h1>
+            </div>
+            <div className="flex flex-col gap-2">
+              <h1 className="w-full md:w-1/2 uppercase font-bold">Kanopi</h1>
+              <h1 className="w-full md:w-1/2">Rangka Besi</h1>
+              <h1 className="w-full md:w-1/2">Atap Metal Spandek t=0.45</h1>
             </div>
           </div>
+          <div className="flex flex-col w-full md:w-1/3 gap-6 mt-6 md:mt-0">
+            <div className="flex flex-col gap-2">
+              <h1 className="w-full md:w-1/2 uppercase font-bold">Living Room Interior</h1>
+              <h1 className="w-full md:w-1/2">Sofa</h1>
+              <h1 className="w-full md:w-1/2">Coffee Table</h1>
+              <h1 className="w-full md:w-1/2">Credenza</h1>
+              <h1 className="w-full md:w-1/2">Side Table</h1>
+              <h1 className="w-full md:w-1/2">Carpet</h1>
+              <h1 className="w-full md:w-1/2">TV</h1>
+            </div>
+            <div className="flex flex-col gap-2">
+              <h1 className="w-full md:w-1/2 uppercase font-bold">Dining Room Interior</h1>
+              <h1 className="w-full md:w-1/2">Dining Table Set</h1>
+              <h1 className="w-full md:w-1/2">Kulkas</h1>
+              <h1 className="w-full md:w-1/2">Dispenser</h1>
+              <h1 className="w-full md:w-1/2">Stand Lamp</h1>
+              <h1 className="w-full md:w-1/2">Dining Lamp</h1>
+              <h1 className="w-full md:w-1/2">Kitchen Set Kabinet Atas</h1>
+              <h1 className="w-full md:w-1/2">Kitchen Set Kabinet Bawah</h1>
+              <h1 className="w-full md:w-1/2">Kitchen Set Top Table Kayu</h1>
+              <h1 className="w-full md:w-1/2">Kitchen Set Kompor Gas Tanam</h1>
+            </div>
+            <div className="flex flex-col gap-2">
+              <h1 className="w-full md:w-1/2 uppercase font-bold">Service</h1>
+              <h1 className="w-full md:w-1/2">Mesin Cuci Front Loading</h1>
+            </div>
+            <div className="flex flex-col gap-2">
+              <h1 className="w-full md:w-1/2 uppercase font-bold">Master Bedroom Interior</h1>
+              <h1 className="w-full md:w-1/2">Bunk Bed</h1>
+              <h1 className="w-full md:w-1/2">Bed Queen Size</h1>
+              <h1 className="w-full md:w-1/2">Wardrobe</h1>
+              <h1 className="w-full md:w-1/2">Meja Rias</h1>
+              <h1 className="w-full md:w-1/2">Mirror</h1>
+              <h1 className="w-full md:w-1/2">Side Table</h1>
+            </div>
+            <div className="flex flex-col gap-2">
+              <h1 className="w-full md:w-1/2 uppercase font-bold">Kamar Anak 1 Interior</h1>
+              <h1 className="w-full md:w-1/2">Bunk Bed</h1>
+              <h1 className="w-full md:w-1/2">Bed</h1>
+              <h1 className="w-full md:w-1/2">Wardrobe</h1>
+              <h1 className="w-full md:w-1/2">Meja Belajar</h1>
+              <h1 className="w-full md:w-1/2">Kursi Belajar</h1>
+            </div>
+            {activeHouseId === 3 && (
+              <>
+                <div className="flex flex-col gap-2">
+                  <h1 className="w-full md:w-1/2 uppercase font-bold">Kamar Anak 2 Interior</h1>
+                  <h1 className="w-full md:w-1/2">Bunk Bed</h1>
+                  <h1 className="w-full md:w-1/2">Bed</h1>
+                  <h1 className="w-full md:w-1/2">Wardrobe</h1>
+                  <h1 className="w-full md:w-1/2">Meja Belajar</h1>
+                  <h1 className="w-full md:w-1/2">Kursi Belajar</h1>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <h1 className="w-full md:w-1/2 uppercase font-bold">Multifunction Room Interior</h1>
+                  <h1 className="w-full md:w-1/2">Meja Belajar</h1>
+                  <h1 className="w-full md:w-1/2">Office Chair</h1>
+                  <h1 className="w-full md:w-1/2">Ambalan</h1>
+                  <h1 className="w-full md:w-1/2">Carpet</h1>
+                </div>
+              </>
+            )}
+          </div>
         </div>
-      )}
-
+      </div>
     </>
   );
 };

@@ -1,12 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
 import { PiCaretDoubleRightThin } from "react-icons/pi";
 
-import House51Layout1 from "../../Assets/Images/51-57/51 - 01 - edit.jpg"
-import House51Layout2 from "../../Assets/Images/51-57/51 - 02 - edit.jpg"
-import House57Layout1 from "../../Assets/Images/51-57/layout-51-1.jpg"
-import House57Layout2 from "../../Assets/Images/51-57/layout-51-2.jpg"
-import House77Layout1 from "../../Assets/Images/77/layout-1.jpg"
-import House77Layout2 from "../../Assets/Images/77/layout-2.jpg"
+import House51Layout1 from "../../Assets/Images/house-layouts/1.png"
+import House51Layout2 from "../../Assets/Images/house-layouts/2.png"
+import House57Layout1 from "../../Assets/Images/house-layouts/3.png"
+import House57Layout2 from "../../Assets/Images/house-layouts/4.png"
+import House96Layout1 from "../../Assets/Images/house-layouts/5.png"
+import House96Layout2 from "../../Assets/Images/house-layouts/6.png"
+import House77Layout1 from "../../Assets/Images/house-layouts/7.png"
+import House77Layout2 from "../../Assets/Images/house-layouts/8.png"
 import House57Render1 from "../../Assets/Images/51-57/render-1.png"
 import House57Render2 from "../../Assets/Images/51-57/render-2.png"
 import House57RenderLoc from "../../Assets/Images/51-57/render-loc.jpg"
@@ -71,19 +73,19 @@ const Houses: React.FC = () => {
   const house51Images: HouseImage[] = [
     {
       id: 1,
-      houseId: 2,
+      houseId: 1,
       roomType: RoomType.HOUSE_LAYOUT,
       imageUrl: House51Layout1
     },
     {
       id: 2,
-      houseId: 2,
+      houseId: 1,
       roomType: RoomType.HOUSE_LAYOUT,
       imageUrl: House51Layout2
     },
     {
       id: 3,
-      houseId: 2,
+      houseId: 1,
       roomType: RoomType.HOUSE_LAYOUT,
       imageUrl: House57RenderLoc
     },
@@ -194,76 +196,91 @@ const Houses: React.FC = () => {
     },
   ]
 
-  const house77Images: HouseImage[] = [
+  const house96Images: HouseImage[] = [
     {
       id: 1,
       houseId: 3,
+      roomType: RoomType.HOUSE_LAYOUT,
+      imageUrl: House96Layout1,
+    },
+    {
+      id: 1,
+      houseId: 3,
+      roomType: RoomType.HOUSE_LAYOUT,
+      imageUrl: House96Layout2,
+    }
+  ]
+
+  const house77Images: HouseImage[] = [
+    {
+      id: 1,
+      houseId: 4,
       roomType: RoomType.HOUSE_LAYOUT,
       imageUrl: House77Layout1
     },
     {
       id: 2,
-      houseId: 3,
+      houseId: 4,
       roomType: RoomType.HOUSE_LAYOUT,
       imageUrl: House77Layout2
     },
     {
       id: 3,
-      houseId: 3,
+      houseId: 4,
       roomType: RoomType.LIVING_ROOM,
       imageUrl: House77RenderLoc
     },
     {
       id: 4,
-      houseId: 3,
+      houseId: 4,
       roomType: RoomType.LIVING_ROOM,
       imageUrl: House77Render1
     },
     {
       id: 5,
-      houseId: 3,
+      houseId: 4,
       roomType: RoomType.LIVING_ROOM,
       imageUrl: House77Render2
     },
     {
       id: 6,
-      houseId: 3,
+      houseId: 4,
       roomType: RoomType.LIVING_ROOM,
       imageUrl: House77Render3
     },
     {
       id: 7,
-      houseId: 3,
+      houseId: 4,
       roomType: RoomType.LIVING_ROOM,
       imageUrl: House77Render4
     },
     {
       id: 8,
-      houseId: 3,
+      houseId: 4,
       roomType: RoomType.LIVING_ROOM,
       imageUrl: House77Render5
     },
     {
       id: 9,
-      houseId: 3,
+      houseId: 4,
       roomType: RoomType.LIVING_ROOM,
       imageUrl: House77Render6
     },
     {
       id: 10,
-      houseId: 3,
+      houseId: 4,
       roomType: RoomType.LIVING_ROOM,
       imageUrl: House77Render7
     },
     {
       id: 11,
-      houseId: 3,
+      houseId: 4,
       roomType: RoomType.LIVING_ROOM,
       imageUrl: House77Render8
     },
     {
       id: 12,
-      houseId: 3,
+      houseId: 4,
       roomType: RoomType.LIVING_ROOM,
       imageUrl: House77Render9
     },
@@ -312,6 +329,26 @@ const Houses: React.FC = () => {
     },
     {
       id: 3,
+      type: 'Superior',
+      images: house57Images,
+      dimension: 57,
+      description: 'Rumah ini cocok bagi pasangan muda yang baru menikah dan memiliki rencana untuk memiliki satu hingga dua anak. Desainnya memungkinkan ruman ini untuk tumbun seiring berjalannya waktu, dengan potensi penggunaan lahan belakang yang beragam untuk keperluan masa depan. Selain itu, rumah ini memiliki budget atau harga yang lebih terjangkau, sambil menawarkan taman belakang yang luas untuk berbagai aktivitas outdoor.',
+      isActive: false,
+      actions: {
+        offer: '',
+        explore: 'https://app.lapentor.com/sphere/numa-housing'
+      },
+      details: {
+        location: '90',
+        floor: 2,
+        bedRoom: '2',
+        bathRoom: '2',
+        parking: '1 Carport',
+        price: 1169000000
+      }
+    },
+    {
+      id: 4,
       type: 'Deluxe',
       images: house77Images,
       dimension: 77,
@@ -322,7 +359,7 @@ const Houses: React.FC = () => {
         explore: 'https://app.lapentor.com/sphere/numa-housing-tipe-77'
       },
       details: {
-        location: '84',
+        location: '96',
         floor: 2,
         bedRoom: '3 + Maid Room',
         bathRoom: '2 + 1',
@@ -334,11 +371,13 @@ const Houses: React.FC = () => {
 
   const generateMessageText = (houseId: number) => {
     if (houseId === 1) {
-      return 'Halo,%20Saya%20tertarik%20dengan%20rumah%20tipe%2051'
+      return 'Halo,%20Saya%20tertarik%20dengan%20rumah%20tipe%20Compact'
     } else if (houseId === 2) {
-      return 'Halo,%20Saya%20tertarik%20dengan%20rumah%20tipe%2057'
+      return 'Halo,%20Saya%20tertarik%20dengan%20rumah%20tipe%20Standar'
+    } else if (houseId === 3) {
+      return 'Halo,%20Saya%20tertarik%20dengan%20rumah%20tipe%20Superior'
     } else {
-      return 'Halo,%20Saya%20tertarik%20dengan%20rumah%20tipe%2077'
+      return 'Halo,%20Saya%20tertarik%20dengan%20rumah%20tipe%20Deluxe'
     }
   }
 
@@ -348,6 +387,7 @@ const Houses: React.FC = () => {
   const [houseImages, setHouseImages] = useState<HouseImage[]>(house51Images)
   const [activeImageId, setActiveImageId] = useState<number>(0)
   const [imageHeight, setImageHeight] = useState<number>(0)
+  const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth)
   const [specificationsActive, setSpecificationsActive] = useState<boolean>(false)
 
   const houseDetailsRef = useRef<HTMLDivElement>(null)
@@ -366,12 +406,6 @@ const Houses: React.FC = () => {
     }
 
     setActiveImageId(activeImageId - 1)
-  }
-
-  const formatPrice = (price: number): string => {
-    const numStr = price.toString()
-
-    return numStr.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   }
 
   const handleActiveHouse = (id: number) => {
@@ -405,6 +439,10 @@ const Houses: React.FC = () => {
         setActiveImageId(0)
         break
       } case 3: {
+        setHouseImages(house96Images)
+        setActiveImageId(0)
+        break
+      } case 4: {
         setHouseImages(house77Images)
         setActiveImageId(0)
         break
@@ -423,9 +461,21 @@ const Houses: React.FC = () => {
     }
   }, [])
 
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth)
+    }
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+
   return (
     <>
-      <div className="houses bg-gray-100 flex flex-col py-10 px-10 md:pt-0 md:px-20 lg:px-[150px] text-slate-700">
+      <div id="house-numa" className="houses bg-gray-100 flex flex-col py-10 px-10 md:pt-0 md:px-20 lg:px-[150px] text-slate-700">
         <h4 className="py-10 uppercase text-gray-600 text-center md:text-left">House Types</h4>
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-2">
           {houses.map((house) => {
@@ -460,72 +510,74 @@ const Houses: React.FC = () => {
           })}
         </div>
         <div className="mt-10 flex flex-col-reverse md:flex-row gap-8">
-          <div ref={houseDetailsRef} className="house-details w-full md:1/2 lg:w-1/3">
-            <h1 className="text-5xl font-bold">{houses[activeHouseId - 1].dimension} &#13217;</h1>
-            <p className="text-normal text-justify font-normal text-gray-600 mt-5 whitespace-break-spaces">{houses[activeHouseId - 1].description}</p>
-            <div className="flex flex-col gap-4 mt-5">
-              <div className="flex flex-row justify-between border-[1px] border-transparent border-b-gray-600 py-5">
-                <h4 className="font-semibold text-small">Luas Tanah</h4>
-                <h4 className="font-bold">{houses[activeHouseId - 1].details.location} &#13217;</h4>
-              </div>
-              <div className="flex flex-row justify-between border-[1px] border-transparent border-b-gray-600 py-5">
-                <h4 className="font-semibold text-small">Lantai</h4>
-                <h4 className="font-bold">{houses[activeHouseId - 1].details.floor}</h4>
-              </div>
-              <div className="flex flex-row justify-between border-[1px] border-transparent border-b-gray-600 py-5">
-                <h4 className="font-semibold text-small">Kamar Tidur</h4>
-                <h4 className="font-bold">{houses[activeHouseId - 1].details.bedRoom}</h4>
-              </div>
-              <div className="flex flex-row justify-between border-[1px] border-transparent border-b-gray-600 py-5">
-                <h4 className="font-semibold text-small">Kamar Mandi</h4>
-                <h4 className="font-bold">{houses[activeHouseId - 1].details.bathRoom}</h4>
-              </div>
-              <div className="flex flex-row justify-between border-[1px] border-transparent border-b-gray-600 py-5">
-                <h4 className="font-semibold text-small">Parkir</h4>
-                <h4 className="font-bold">{houses[activeHouseId - 1].details.parking}</h4>
-              </div>
-              <div className="flex flex-row justify-between py-5">
-                <h4 className="font-semibold text-small">Harga</h4>
-                <h4 className="font-bold text-rose-600 text-right">
-                  Rp. {formatPrice(houses[activeHouseId - 1].details.price)}
-                  <br />
+          <div className="w-full md:1/2 lg:w-1/3">
+            <div ref={houseDetailsRef} className="house-details w-full">
+              <h1 className="text-5xl font-bold">{houses[activeHouseId - 1].dimension} &#13217;</h1>
+              <p className="text-normal text-justify font-normal text-gray-600 mt-5 whitespace-break-spaces">{houses[activeHouseId - 1].description}</p>
+              <div className="flex flex-col gap-4 mt-5">
+                <div className="flex flex-row justify-between border-[1px] border-transparent border-b-gray-600 py-5">
+                  <h4 className="font-semibold text-small">Luas Tanah</h4>
+                  <h4 className="font-bold">{houses[activeHouseId - 1].details.location} &#13217;</h4>
+                </div>
+                <div className="flex flex-row justify-between border-[1px] border-transparent border-b-gray-600 py-5">
+                  <h4 className="font-semibold text-small">Lantai</h4>
+                  <h4 className="font-bold">{houses[activeHouseId - 1].details.floor}</h4>
+                </div>
+                <div className="flex flex-row justify-between border-[1px] border-transparent border-b-gray-600 py-5">
+                  <h4 className="font-semibold text-small">Kamar Tidur</h4>
+                  <h4 className="font-bold">{houses[activeHouseId - 1].details.bedRoom}</h4>
+                </div>
+                <div className="flex flex-row justify-between border-[1px] border-transparent border-b-gray-600 py-5">
+                  <h4 className="font-semibold text-small">Kamar Mandi</h4>
+                  <h4 className="font-bold">{houses[activeHouseId - 1].details.bathRoom}</h4>
+                </div>
+                <div className="flex flex-row justify-between border-[1px] border-transparent border-b-gray-600 py-5">
+                  <h4 className="font-semibold text-small">Parkir</h4>
+                  <h4 className="font-bold">{houses[activeHouseId - 1].details.parking}</h4>
+                </div>
+                <div className="flex flex-row justify-between py-5">
                   <small className="text-xs">Fully Furnished,<br /> For more Information Click <span className="cursor-pointer" onClick={() => setSpecificationsActive(!specificationsActive)}>Specifications</span></small>
-                </h4>
+                </div>
               </div>
-            </div>
-            <div className="flex flex-col lg:flex-row gap-5 mt-5">
-              <button
-                onClick={() => {
-                  window.location.href="#house-spec"
-                  setSpecificationsActive(!specificationsActive)
-                }}
-                className="
+              <div className="flex flex-col-reverse lg:flex-row gap-5 mt-5">
+                <button
+                  onClick={() => {
+                    window.location.href = "#house-spec"
+                    setSpecificationsActive(!specificationsActive)
+                  }}
+                  className="
                   bg-white text-center text-gray-700 uppercase font-normal 
                   w-full py-5 hover:bg-gray-200 hover:text-gray-800 transition-all 
                   ease-in-out duration-300 items-center justify-center">
-                Specifications
-              </button>
-              <a
-                href={houses[activeHouseId - 1].actions.explore} target="_blank" className="bg-white text-center text-gray-700 uppercase font-normal w-full py-5 hover:bg-gray-200 hover:text-gray-800 transition-all ease-in-out duration-300 items-center justify-center">
-                Explore House 360°
-              </a>
-              <button
-                id="house-spec"
-                onClick={(e) => {
-                  e.preventDefault()
-                  window.location.href = `https://api.whatsapp.com/send/?phone=%2B628989901011&text&type=phone_number&app_absent=0&text=${generateMessageText(activeHouseId)}`
-                }}
-                className="bg-black text-white uppercase font-normal text-center w-full py-5 hover:bg-gray-600 hover:text-gray-100 transition-all ease-in-out duration-300 items-center justify-center">
-                I'm Interested
-              </button>
+                  Specifications
+                </button>
+                <a
+                  href={houses[activeHouseId - 1].actions.explore} target="_blank" className="bg-white text-center text-gray-700 uppercase font-normal w-full py-5 hover:bg-gray-200 hover:text-gray-800 transition-all ease-in-out duration-300 items-center justify-center">
+                  Explore House 360°
+                </a>
+                <button
+                  id="house-spec"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    window.location.href = `https://api.whatsapp.com/send/?phone=%2B628989901011&text&type=phone_number&app_absent=0&text=${generateMessageText(activeHouseId)}`
+                  }}
+                  className="bg-black text-white uppercase font-normal text-center w-full py-5 hover:bg-gray-600 hover:text-gray-100 transition-all ease-in-out duration-300 items-center justify-center">
+                  Check for Price
+                </button>
+              </div>
             </div>
           </div>
-          <div className={`w-full h-[${imageHeight}] md:1/2 lg:w-2/3 flex items-center justify-center`}>
-            <div className="bg-slate-500 relative rounded-lg md:h-full w-full">
+          <div className={`w-full md:h-[${imageHeight}px] md:1/2 lg:w-2/3 flex items-center justify-center`}>
+            <div className={`bg-white relative rounded-lg md:h-[${imageHeight}px] w-full`}>
               <img
-                className="h-full w-full rounded-lg object-cover object-center transition-all duration-300 ease-in-out"
+                style={{
+                  height: windowWidth < 600 ? '100%' : `${imageHeight}px`
+                }}
+                className={`
+                  w-full rounded-lg 
+                  ${activeImageId === 0 || activeImageId === 1 ? 'object-contain' : 'object-cover'} object-center transition-all duration-300 ease-in-out`}
                 src={houseImages[activeImageId].imageUrl} />
-              <div className="absolute inset-0 flex flex-row justify-between h-full w-full bg-gray-10">
+              <div className={`absolute inset-0 flex flex-row justify-between md:h-[${imageHeight}px] w-full bg-gray-10`}>
                 <div className="w-1/12 flex items-center invert justify-center">
                   <button
                     onClick={handlePrevImage}
@@ -607,7 +659,7 @@ const Houses: React.FC = () => {
               <h1 className="w-full md:w-1/2">Atap Metal Spandek t=0.45</h1>
             </div>
           </div>
-          <div className="flex flex-col w-full md:w-1/3 gap-6 mt-6 md:mt-0">
+          {/* <div className="flex flex-col w-full md:w-1/3 gap-6 mt-6 md:mt-0">
             <div className="flex flex-col gap-2">
               <h1 className="w-full md:w-1/2 uppercase font-bold">Living Room Interior</h1>
               <h1 className="w-full md:w-1/2">Sofa</h1>
@@ -650,7 +702,7 @@ const Houses: React.FC = () => {
               <h1 className="w-full md:w-1/2">Meja Belajar</h1>
               <h1 className="w-full md:w-1/2">Kursi Belajar</h1>
             </div>
-            {activeHouseId === 3 && (
+            {activeHouseId === 4 && (
               <>
                 <div className="flex flex-col gap-2">
                   <h1 className="w-full md:w-1/2 uppercase font-bold">Kamar Anak 2 Interior</h1>
@@ -669,7 +721,7 @@ const Houses: React.FC = () => {
                 </div>
               </>
             )}
-          </div>
+          </div> */}
         </div>
       </div>
     </>

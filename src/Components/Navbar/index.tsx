@@ -21,13 +21,13 @@ const Navbar: React.FC = () => {
                                 <VscClose size={26} />
                             </button>
                         </div>
-                        <div className='hover:border-b-[2px] hover:cursor-pointer border-white transition-all ease-in-out duration-300'>Home</div>
-                        <div className='hover:border-b-[2px] hover:cursor-pointer border-white transition-all ease-in-out duration-300'>About</div>
-                        <div className='hover:border-b-[2px] hover:cursor-pointer border-white transition-all ease-in-out duration-300'>Contact</div>
+                        <a href='#home' className='hover:border-b-[2px] hover:cursor-pointer border-white transition-all ease-in-out duration-300'>Home</a>
+                        <a href='#house-numa' className='hover:border-b-[2px] hover:cursor-pointer border-white transition-all ease-in-out duration-300'>About</a>
+                        <a href='#contact' className='hover:border-b-[2px] hover:cursor-pointer border-white transition-all ease-in-out duration-300'>Contact</a>
                     </div> :
                     <nav id="home" className="absolute jumbotron-navbar bg-transparent flex items-center justify-between px-10 md:px-20 lg:px-[150px] py-4 font-semibold z-20 top-0 left-0 w-full">
                         <div className="text-white">
-                            <img className='w-20' src={Logo} />
+                            <img className='w-32' src={Logo} />
                         </div>
 
                         <div className="text-white flex-grow text-center relative font-semibold">
@@ -38,7 +38,7 @@ const Navbar: React.FC = () => {
                                         <div className="hover-border"></div>
                                     </li>
                                 </a>
-                                <a href="#about">
+                                <a href="#house-numa">
                                     <li className="nav-item relative p-4">
                                         About
                                         <div className="hover-border"></div>

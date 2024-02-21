@@ -25,13 +25,13 @@ export default function NavbarScroll({ scrollY }: Props) {
                         </button>
                     </div>
                     <a href="#home" className='hover:border-b-[2px] hover:cursor-pointer border-white transition-all ease-in-out duration-300'>Home</a>
-                    <a href="#about" className='hover:border-b-[2px] hover:cursor-pointer border-white transition-all ease-in-out duration-300'>About</a>
+                    <a href="#house-numa" className='hover:border-b-[2px] hover:cursor-pointer border-white transition-all ease-in-out duration-300'>About</a>
                     <a href="#contact" className='hover:border-b-[2px] hover:cursor-pointer border-white transition-all ease-in-out duration-300'>Contact</a>
                 </div>
                 :
                 <nav className={`${scrollY > 300 ? '' : 'hidden'} fixed jumbotron-navbar text-white bg-black opacity-75 flex items-center justify-between px-10 md:px-20 lg:px-[150px] py-4 font-semibold z-20 top-0 left-0 w-full`}>
                     <div className="text-white">
-                        <img className='w-20' src={Logo} />
+                        <img className='w-32' src={Logo} />
                     </div>
 
                     <div className="text-white flex-grow text-center relative font-semibold">
@@ -42,7 +42,7 @@ export default function NavbarScroll({ scrollY }: Props) {
                                     <div className="hover-border"></div>
                                 </li>
                             </a>
-                            <a href="#about">
+                            <a href="#house-numa">
                                 <li className="nav-item relative p-4">
                                     About
                                     <div className="hover-border"></div>

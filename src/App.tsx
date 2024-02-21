@@ -23,9 +23,7 @@ import { GiGate } from "react-icons/gi";
 import { BsBricks } from "react-icons/bs";
 import { RxMargin } from "react-icons/rx";
 import { SiMyspace } from "react-icons/si";
-import { BsBuildings } from "react-icons/bs";
 import { AiTwotoneGold } from "react-icons/ai";
-import { BsBuildingGear } from "react-icons/bs";
 import { TbBuildingCarousel } from "react-icons/tb";
 
 
@@ -112,7 +110,7 @@ function App() {
               <div className='flex md:flex-row items-center gap-6 md:pt-10 pb-6 w-full md:w-1/3'>
                 <div className='rounded-lg w-16 h-16 bg-gray-200 flex items-center justify-center'><MdOutlineOtherHouses size={32} /></div>
                 <div className='flex flex-col'>
-                  <h3 className='text-lg md:text-3xl font-semibold'>3</h3>
+                  <h3 className='text-lg md:text-3xl font-semibold'>4</h3>
                   <h3 className='small text-sm md:text-normal text-gray-500'>Tipe Rumah</h3>
                 </div>
               </div>
@@ -120,34 +118,34 @@ function App() {
           </div>
         </div>
       </div>
-      <div className='p-10 md:p-0 lg:px-[150px]'>
+      <div className='p-10 md:py-0 md:px-10 lg:px-[150px]'>
         <div className='h-[1px] w-full border-gray-200 border-t-[1px]'></div>
         <div className='flex flex-col gap-6 my-10 md:my-20'>
           <h3 className='uppercase text-gray-600 text-center md:text-left'>The Advantages</h3>
           <div className='flex flex-col md:flex-row gap-4 md:gap-6'>
             <div className='w-full md:w-1/3 group/advantage hover:cursor-pointer'>
-              <img src={WellKnownArchitect} className='rounded-lg shadow-lg h-80 object-cover brightness-95 object-center group-hover/advantage:brightness-75 transition-all duration-300 ease-in-out' />
+              <img src={WellKnownArchitect} className='rounded-lg shadow-lg h-80 object-cover brightness-95 object-center group-hover/advantage:brightness-75 transition-all duration-300 ease-in-out md:block hidden' />
               <h1 className='mt-8 text-lg md:text-3xl font-bold group-hover/advantage:text-gray-600 transition-colors ease-in-out duration-300'>Well-Known Architect</h1>
-              <p className='mt-4 group-hover/advantage:text-gray-600 transition-all text-sm md:text-normal duration-300 ease-in-out'>LUWIST, studio desain yang didirikan oleh Lukie Widya, memiliki fokus pada arsitektur, interior, dan desain lingkungan. Studio ini mengakui pentingnya aspek sosial, kemanusiaan, dan fenomena sosial, industri, dan bisnis dalam merancang visi misi mereka.
+              <p className='mt-4 group-hover/advantage:text-gray-600 transition-all text-sm md:text-normal duration-300 ease-in-out'>Rumah ini didesain oleh LUWIST, studio desain yang didirikan oleh Lukie Widya. Studio ini memiliki ciri khas desain pada rumah tinggal.
               </p>
             </div>
             <div className='w-full md:w-1/3 group/advantage hover:cursor-pointer'>
-              <img src={Location} className='rounded-lg shadow-lg h-80 object-cover object-center group-hover/advantage:brightness-75 transition-all duration-300 ease-in-out' />
+              <img src={Location} className='rounded-lg shadow-lg h-80 object-cover object-center group-hover/advantage:brightness-75 transition-all duration-300 ease-in-out md:block hidden' />
               <h1 className='mt-8 text-lg md:text-3xl font-bold group-hover/advantage:text-gray-600 transition-colors ease-in-out duration-300'>Convenient Location</h1>
-              <p className='mt-4 group-hover/advantage:text-gray-600 transition-all text-sm md:text-normal duration-300 ease-in-out'>Jarak dan lokasi di jantung kota bandung serta kawasan kawasan sekitar yang sudah matang mempermudah untuk kebutuhan penting lainnya seperti sekolah, rumah sakit, area hiburan, tempat olahraga serta akses ke lokasi yang bisa ditempuh dengan mudah.
+              <p className='mt-4 group-hover/advantage:text-gray-600 transition-all text-sm md:text-normal duration-300 ease-in-out'>Jarak dan lokasi di jantung Kota Bandung serta kawasan kawasan sekitar yang sudah matang.
               </p>
             </div>
             <div className='w-full md:w-1/3 group/advantage hover:cursor-pointer'>
-              <img src={FullyFurnished} className='rounded-lg shadow-lg h-80 object-cover object-center group-hover/advantage:brightness-75 transition-all duration-300 ease-in-out' />
+              <img src={FullyFurnished} className='rounded-lg shadow-lg h-80 object-cover object-center group-hover/advantage:brightness-75 transition-all duration-300 ease-in-out md:block hidden' />
               <h1 className='mt-8 text-lg md:text-3xl font-bold group-hover/advantage:text-gray-600 transition-colors ease-in-out duration-300'>Fully Furnished</h1>
-              <p className='mt-4 group-hover/advantage:text-gray-600 transition-all text-sm md:text-normal duration-300 ease-in-out'>Rumah ini telah dilengkapi dengan furnitur berkualitas tinggi dan desain interior yang modern. Dengan fasilitas lengkap, rumah ini hadirkan pengalaman tinggal yang tak tertandingi untuk memenuhi kebutuhan penghuni.
+              <p className='mt-4 group-hover/advantage:text-gray-600 transition-all text-sm md:text-normal duration-300 ease-in-out'>Rumah ini telah dilengkapi dengan furnitur berkualitas tinggi dan desain interior yang moderndengan fasilitas lengkap.
               </p>
             </div>
           </div>
         </div>
       </div>
       <Houses />
-      <div className="px-10 md:px-20 lg:px-[150px] py-20 flex flex-col lg:flex-row gap-20 text-slate-700">
+      <div className="px-10 md:px-20 lg:px-[150px] pt-20 md:py-20 flex flex-col lg:flex-row gap-20 text-slate-700">
         <div className='w-full md:w-full lg:w-1/4 flex flex-col gap-10 border-b-[1px'>
           <div className='flex flex-col gap-2'>
             <h1 className='leading-2 uppercase text-gray-600 text-center md:text-left'>Numa's Services</h1>
@@ -184,26 +182,6 @@ function App() {
                 <div className='flex flex-col'>
                   <h3 className='text-lg md:text-2xl font-semibold'>Flexible Space</h3>
                   <h3 className='small text-small md:text-normal text-gray-500 break-words'>Ruang fleksible dengan multi-purpose</h3>
-                </div>
-              </div>
-              <div className='flex flex-row gap-6 py-6 w-full md:w-1/2 items-center justify-start'>
-                <div className='rounded-lg w-16 md:w-18 h-16 md:h-18 bg-gray-200 flex items-center justify-center'>
-                  <BsBuildings size={30} />
-                </div>
-                <div className='flex flex-col'>
-                  <h3 className='text-lg md:text-2xl font-semibold'>Nearby Facility</h3>
-                  <h3 className='small text-small md:text-normal text-gray-500 break-words'>Fasilitas kawasan yang menunjang</h3>
-                </div>
-              </div>
-            </div>
-            <div className='flex flex-col lg:flex-row gap-6 mt-8'>
-              <div className='flex flex-row gap-6 py-6 w-full md:w-1/2 items-center justify-start'>
-                <div className='rounded-lg w-16 md:w-18 h-16 md:h-18 bg-gray-200 flex items-center justify-center'>
-                  <BsBuildingGear size={30} />
-                </div>
-                <div className='flex flex-col'>
-                  <h3 className='text-lg md:text-2xl font-semibold'>Future Development Plans</h3>
-                  <h3 className='small text-small md:text-normal text-gray-500 break-words'>Pengembangan yang strategis</h3>
                 </div>
               </div>
               <div className='flex flex-row gap-6 py-6 w-full md:w-1/2 items-center justify-start'>

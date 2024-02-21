@@ -173,7 +173,7 @@ const PublicServices: React.FC = () => {
                     filter: 'blur(0.1px) brightness(0.7)', // Adjust the values based on your preference
                     transition: 'background 1s ease-in-out, filter 0.5s ease-in-out'
                 }}
-                className='service-image relative md:min-h-screen min-w-screen bg-gray-200 p-10 md:py-20 md:px-20 lg:px-[150px] bg-fixed bg-cover bg-no-repeat bg-center flex md:flex-col-reverse'>
+                className='service-image hidden relative md:min-h-screen min-w-screen bg-gray-200 p-10 md:py-20 md:px-20 lg:px-[150px] bg-fixed bg-cover bg-no-repeat bg-center lg:flex md:flex-col-reverse'>
                 <div className='absolute inset-0 h-full w-full flex flex-row justify-between items-center'>
                     <div className='text-4xl px-10 hover:pl-12 h-full transition-all ease-in-out duration-300 invert opacity-50 hover:opacity-70'>
                         <button
